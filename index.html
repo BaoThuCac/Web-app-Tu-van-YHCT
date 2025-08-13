@@ -17,7 +17,8 @@
     <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-2xl w-full border border-green-200">
         <!-- Logo đã được cập nhật để chống bộ nhớ đệm -->
         <div class="flex justify-center mb-4">
-            <img id="logo" alt="Logo của tôi" class="h-20 w-20 rounded-full border-2 border-green-500 shadow-md">
+            <!-- Thêm tham số ngẫu nhiên trực tiếp vào src của hình ảnh -->
+            <img src="logo.png?v=1" alt="Logo của tôi" id="logo" class="h-20 w-20 rounded-full border-2 border-green-500 shadow-md">
         </div>
         
         <h1 class="text-3xl font-bold text-center text-green-800 mb-2">
@@ -70,10 +71,10 @@
     </div>
 
     <script>
-        // Cập nhật đường dẫn logo bằng cách thêm timestamp để chống cache trình duyệt
+        // Cập nhật tham số phiên bản mỗi khi trang được tải lại
         document.addEventListener('DOMContentLoaded', (event) => {
             const logo = document.getElementById('logo');
-            logo.src = 'logo.png?' + new Date().getTime();
+            logo.src = 'logo.png?v=' + new Date().getTime();
         });
 
         // Gắn cứng API Key trực tiếp vào mã nguồn
