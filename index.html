@@ -70,9 +70,11 @@
     </div>
 
     <script>
-        // Cập nhật đường dẫn logo bằng cách thêm timestamp
-        // Hãy thay thế `logo.png` bằng tên tệp chính xác của bạn
-        document.getElementById('logo').src = 'logo.png' + '?' + new Date().getTime();
+        // Cập nhật đường dẫn logo bằng cách thêm timestamp để chống cache trình duyệt
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const logo = document.getElementById('logo');
+            logo.src = 'logo.png?' + new Date().getTime();
+        });
 
         // Gắn cứng API Key trực tiếp vào mã nguồn
         const apiKey = "AIzaSyC1gl0Sj_IGMDqfEXkdUKQ9mEfNNA6KXWs";
