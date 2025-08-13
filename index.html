@@ -15,9 +15,9 @@
 </head>
 <body class="flex items-center justify-center min-h-screen p-4">
     <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-2xl w-full border border-green-200">
-        <!-- Logo đã được thêm vào đây -->
+        <!-- Logo đã được cập nhật để chống bộ nhớ đệm -->
         <div class="flex justify-center mb-4">
-            <img src="logo.png" alt="Logo" class="h-20 w-20 rounded-full border-2 border-green-500 shadow-md">
+            <img id="logo" alt="Logo" class="h-20 w-20 rounded-full border-2 border-green-500 shadow-md">
         </div>
         
         <h1 class="text-3xl font-bold text-center text-green-800 mb-2">
@@ -70,6 +70,9 @@
     </div>
 
     <script>
+        // Cập nhật đường dẫn logo bằng cách thêm timestamp
+        document.getElementById('logo').src = 'logo.png?' + new Date().getTime();
+
         // Gắn cứng API Key trực tiếp vào mã nguồn
         const apiKey = "AIzaSyC1gl0Sj_IGMDqfEXkdUKQ9mEfNNA6KXWs";
 
@@ -166,4 +169,3 @@
     </script>
 </body>
 </html>
-
